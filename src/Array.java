@@ -20,8 +20,8 @@ public class Array {
         }
         System.out.println();
         System.out.println("Задание 3:");
-        int avg =  myArray[0] + myArray[2];
-        System.out.print("Сумма первого и среднего элементов = " + avg);
+        int a =  myArray[0] + myArray[2];
+        System.out.print("Сумма первого и среднего элементов = " + a);
     }
 }
 
