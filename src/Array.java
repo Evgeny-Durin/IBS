@@ -12,14 +12,14 @@ public class Array {
         System.out.println();
         System.out.println("Задание 2:");
         int x = myArray[0];
-        myArray[0] = myArray[myArray.length-1];
-        myArray[myArray.length-1] = x;
+        myArray[0] = myArray[myArray.length - 1];
+        myArray[myArray.length - 1] = x;
         for (int j : myArray) {
             System.out.print(" " + j + " ");
         }
         System.out.println();
         System.out.println("Задание 3:");
-        int a =  myArray[myArray.length-5] + myArray[myArray.length-3];
+        int a =  myArray[0] + myArray[myArray.length / 2];
         System.out.print("Сумма первого и среднего элементов = " + a);
     }
 }
