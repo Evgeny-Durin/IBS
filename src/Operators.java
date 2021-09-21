@@ -14,11 +14,11 @@ public class Operators {
         double s = (x + y + z) / 3;
         System.out.println("Среднее арифметическое введенных чисел: " + s);
         double r = Math.floor(s / 2);
-        System.out.println("Среднее арифметическое введенных чисел, деленное на 2: " + r);
+        //System.out.println("Среднее арифметическое введенных чисел, деленное на 2: " + r);
         if (r > 3) {
             System.out.println("Программа выполнена корректно");
-    } else {
-            System.out.println("Программа выполнена некорректно");
+    /*} else {
+           System.out.println("Программа выполнена некорректно");*/
         }
     }
 }
