@@ -55,25 +55,25 @@ public class Converter {
                             case 1 -> {//метр
                                 double me = Enter();
                                 double[] meterArray = meter(me);
-                                outputLeght(meterArray);
+                                outputLenght(meterArray);
                                 j = true;
                             }
                             case 2 -> {//миля
                                 double mi = Enter();
                                 double[] mileArray = mile(mi);
-                                outputLeght(mileArray);
+                                outputLenght(mileArray);
                                 j = true;
                             }
                             case 3 -> {//ярд
                                 double ya = Enter();
                                 double[] yardArray = yard(ya);
-                                outputLeght(yardArray);
+                                outputLenght(yardArray);
                                 j = true;
                             }
                             case 4 -> {//фут
                                 double fo = Enter();
                                 double[] footArray = foot(fo);
-                                outputLeght(footArray);
+                                outputLenght(footArray);
                                 j = true;
                             }
                             default -> System.out.println("Введено некорректное число");
@@ -101,7 +101,7 @@ public class Converter {
         System.out.println("Стоун: " + m[3]);
     }
     //метод вывода расстояния
-    private static void outputLeght(double[] m) {
+    private static void outputLenght(double[] m) {
 
         System.out.println("Результат:");
         System.out.println("Метры: " + m[0]);
