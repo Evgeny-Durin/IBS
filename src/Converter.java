@@ -85,12 +85,14 @@ public class Converter {
         }
 
     }
+
     //метод ввода
     private static double Enter() {
         System.out.print("Введите число: ");
         Scanner scanL = new Scanner(System.in);
         return scanL.nextByte();
     }
+
     //метод вывода массы
     private static void outputWeight(double[] m) {
 
@@ -100,6 +102,7 @@ public class Converter {
         System.out.println("Унция: " + m[2]);
         System.out.println("Стоун: " + m[3]);
     }
+
     //метод вывода расстояния
     private static void outputLenght(double[] m) {
 
@@ -109,8 +112,9 @@ public class Converter {
         System.out.println("Ярды: " + m[2]);
         System.out.println("Футы: " + m[3]);
     }
+
     // метод преобразования коллограмм
-    private static double[] kilogram (double l){
+    private static double[] kilogram(double l) {
         double[] m = new double[4];
         m[0] = l;// киллограмы
         m[1] = l * 2.205; // киллограмы в фунты
@@ -118,8 +122,9 @@ public class Converter {
         m[3] = l / 6.35; // киллограмы в стоуны
         return m;
     }
+
     // метод преобразования фунтов
-    private static double[] ib (double l) {
+    private static double[] ib(double l) {
         double[] m = new double[4];
         m[0] = l / 2.205;// фунты в киллограм
         m[1] = l; // фунты
@@ -129,7 +134,7 @@ public class Converter {
     }
 
     // метод преобразования унции
-    private static double[] ounce (double l) {
+    private static double[] ounce(double l) {
         double[] m = new double[4];
         m[0] = l * 35.274;// унции в киллограм
         m[1] = l / 16; // унции в футы
@@ -137,8 +142,9 @@ public class Converter {
         m[3] = l / 224; // унции в стоуны
         return m;
     }
+
     // метод преобразования стоунов
-    private static double[] stone (double l) {
+    private static double[] stone(double l) {
         double[] m = new double[4];
         m[0] = l / 6.35;// стоуны в киллограм
         m[1] = l * 14; // стоуны в футы
@@ -146,8 +152,9 @@ public class Converter {
         m[3] = l; // стоуны
         return m;
     }
+
     // метод преобразования метра
-    private static double[] meter (double l) {
+    private static double[] meter(double l) {
         double[] m = new double[4];
         m[0] = l;// метры
         m[1] = l / 1609; // метры в мили
@@ -155,8 +162,9 @@ public class Converter {
         m[3] = l * 3.281; // метры в футы
         return m;
     }
+
     // метод преобразования мили
-    private static double[] mile (double l) {
+    private static double[] mile(double l) {
         double[] m = new double[4];
         m[0] = l * 1609;// мили в метры
         m[1] = l; // мили
@@ -164,8 +172,9 @@ public class Converter {
         m[3] = l * 5280; // мили в футы
         return m;
     }
+
     // метод преобразования ярда
-    private static double[] yard (double l) {
+    private static double[] yard(double l) {
         double[] m = new double[4];
         m[0] = l / 1.094;// ярды в метры
         m[1] = l / 1760; // ярды в мили
@@ -173,8 +182,9 @@ public class Converter {
         m[3] = l * 3; // ярды футы
         return m;
     }
+
     // метод преобразования футов
-    private static double[] foot (double l) {
+    private static double[] foot(double l) {
         double[] m;
         m = new double[4];
         m[0] = l / 3.281;// футы в метры
