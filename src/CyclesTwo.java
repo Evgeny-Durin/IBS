@@ -7,7 +7,7 @@ public class CyclesTwo {
         int n = scanN.nextInt();
         if (n > 0) {
             int s = 0;
-            for (int i = 1; i < n; i = i + 2) { // не включаем n в сумму?
+            for (int i = 1; i <= n; i = i + 2) {
                 s += i;
             }
             System.out.println("Сумма нечетных чисел = " + s);

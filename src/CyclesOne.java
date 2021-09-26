@@ -12,7 +12,10 @@ public class CyclesOne {
             Scanner scanArray = new Scanner(System.in);
             myArray[i] = scanArray.nextInt();
             switch (myArray[i]) {
-                case 1, 2, 3 -> k = false;//x, y, z
+                case 1://x
+                case 2://y
+                case 3://z
+                    k = false;
             }
         }
         if (!k) {

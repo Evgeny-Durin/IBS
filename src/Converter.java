@@ -8,7 +8,7 @@ public class Converter {
             Scanner scanX = new Scanner(System.in);
             byte x = scanX.nextByte();
             switch (x) {
-                case 1 -> {
+                case 1:
                     o = true;
                     boolean i = false;
                     while (!i) {
@@ -16,35 +16,36 @@ public class Converter {
                         Scanner scanE = new Scanner(System.in);
                         byte e = scanE.nextByte();
                         switch (e) {
-                            case 1 -> {//киллограм
+                            case 1: //киллограм
                                 double k = Enter();
                                 double[] kilogramArray = kilogram(k);
                                 outputWeight(kilogramArray);
                                 i = true;
-                            }
-                            case 2 -> {//фунт
+                                break;
+                            case 2: //фунт
                                 double f = Enter();
                                 double[] ibArray = ib(f);
                                 outputWeight(ibArray);
                                 i = true;
-                            }
-                            case 3 -> {//унция
+                                break;
+                            case 3: //унция
                                 double u = Enter();
                                 double[] ounceArray = ounce(u);
                                 outputWeight(ounceArray);
                                 i = true;
-                            }
-                            case 4 -> {//стоун
+                                break;
+                            case 4: //стоун
                                 double s = Enter();
                                 double[] stoneArray = stone(s);
                                 outputWeight(stoneArray);
                                 i = true;
-                            }
-                            default -> System.out.println("Введено некорректное число");
+                                break;
+                            default:
+                                System.out.println("Введено некорректное число");
+                                break;
                         }
                     }
-                }
-                case 2 -> {
+                case 2:
                     o = true;
                     boolean j = false;
                     while (!j) {
@@ -52,39 +53,42 @@ public class Converter {
                         Scanner scanE = new Scanner(System.in);
                         byte e = scanE.nextByte();
                         switch (e) {
-                            case 1 -> {//метр
+                            case 1: //метр
                                 double me = Enter();
                                 double[] meterArray = meter(me);
                                 outputLenght(meterArray);
                                 j = true;
-                            }
-                            case 2 -> {//миля
+                                break;
+                            case 2: //миля
                                 double mi = Enter();
                                 double[] mileArray = mile(mi);
                                 outputLenght(mileArray);
                                 j = true;
-                            }
-                            case 3 -> {//ярд
+                                break;
+                            case 3: //ярд
                                 double ya = Enter();
                                 double[] yardArray = yard(ya);
                                 outputLenght(yardArray);
                                 j = true;
-                            }
-                            case 4 -> {//фут
+                                break;
+                            case 4: //фут
                                 double fo = Enter();
                                 double[] footArray = foot(fo);
                                 outputLenght(footArray);
                                 j = true;
-                            }
-                            default -> System.out.println("Введено некорректное число");
+                                break;
+                            default:
+                                System.out.println("Введено некорректное число");
+                                break;
                         }
                     }
-                }
-                default -> System.out.println("Введено некорректное число");
+                default:
+                    System.out.println("Введено некорректное число");
+                    break;
             }
         }
-
     }
+
 
     //метод ввода
     private static double Enter() {
