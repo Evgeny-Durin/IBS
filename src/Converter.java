@@ -141,7 +141,7 @@ public class Converter {
 
     // метод преобразования метра
     private static void meter(double l) {
-        double mile  = l / 1609; // метры в мили
+        double mile = l / 1609; // метры в мили
         double yard = l * 1.094; // метры в ярды
         double feet = l * 3.281; // метры в футы
         outputLenght(l, mile, yard, feet);
