@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.math.BigDecimal;
 
 public class Converter {
     public static void main(String[] args) {
@@ -17,26 +18,22 @@ public class Converter {
                         switch (e) {
                             case 1: //киллограм
                                 double k = Enter();
-                                double[] kilogramArray = kilogram(k);
-                                outputWeight(kilogramArray);
+                                kilogram(k);
                                 i = true;
                                 break;
                             case 2: //фунт
                                 double f = Enter();
-                                double[] ibArray = ib(f);
-                                outputWeight(ibArray);
+                                ib(f);
                                 i = true;
                                 break;
                             case 3: //унция
                                 double u = Enter();
-                                double[] ounceArray = ounce(u);
-                                outputWeight(ounceArray);
+                                ounce(u);
                                 i = true;
                                 break;
                             case 4: //стоун
                                 double s = Enter();
-                                double[] stoneArray = stone(s);
-                                outputWeight(stoneArray);
+                                stone(s);
                                 i = true;
                                 break;
                             default:
@@ -44,6 +41,7 @@ public class Converter {
                                 break;
                         }
                     }
+                    break;
                 case 2:
                     o = true;
                     boolean j = false;
@@ -53,26 +51,22 @@ public class Converter {
                         switch (e) {
                             case 1: //метр
                                 double me = Enter();
-                                double[] meterArray = meter(me);
-                                outputLenght(meterArray);
+                                meter(me);
                                 j = true;
                                 break;
                             case 2: //миля
                                 double mi = Enter();
-                                double[] mileArray = mile(mi);
-                                outputLenght(mileArray);
+                                mile(mi);
                                 j = true;
                                 break;
                             case 3: //ярд
                                 double ya = Enter();
-                                double[] yardArray = yard(ya);
-                                outputLenght(yardArray);
+                                yard(ya);
                                 j = true;
                                 break;
                             case 4: //фут
                                 double fo = Enter();
-                                double[] footArray = foot(fo);
-                                outputLenght(footArray);
+                                foot(fo);
                                 j = true;
                                 break;
                             default:
@@ -80,6 +74,7 @@ public class Converter {
                                 break;
                         }
                     }
+                    break;
                 default:
                     System.out.println("Введено некорректное число");
                     break;
@@ -92,107 +87,88 @@ public class Converter {
     private static double Enter() {
         System.out.print("Введите число: ");
         Scanner scan = new Scanner(System.in);
-        return scan.nextByte();
+        return scan.nextDouble();
     }
 
     //метод вывода массы
-    private static void outputWeight(double[] m) {
-
+    private static void outputWeight(double kg, double ib, double st, double unc) {
         System.out.println("Результат:");
-        System.out.println("Киллограм: " + m[0]);
-        System.out.println("Фунт: " + m[1]);
-        System.out.println("Унция: " + m[2]);
-        System.out.println("Стоун: " + m[3]);
+        System.out.println("Киллограм: " + String.format("%.2f", kg));
+        System.out.println("Фунт: " + String.format("%.2f", ib));
+        System.out.println("Унция: " + String.format("%.2f", st));
+        System.out.println("Стоун: " + String.format("%.2f", unc));
     }
 
     //метод вывода расстояния
-    private static void outputLenght(double[] m) {
-
+    private static void outputLenght(double m, double mile, double yard, double feet) {
         System.out.println("Результат:");
-        System.out.println("Метры: " + m[0]);
-        System.out.println("Мили: " + m[1]);
-        System.out.println("Ярды: " + m[2]);
-        System.out.println("Футы: " + m[3]);
+        System.out.println("Метры: " + String.format("%.2f", m));
+        System.out.println("Мили: " + String.format("%.2f", mile));
+        System.out.println("Ярды: " + String.format("%.2f", yard));
+        System.out.println("Футы: " + String.format("%.2f", feet));
     }
 
     // метод преобразования коллограмм
-    private static double[] kilogram(double l) {
-        double[] m = new double[4];
-        m[0] = l;// киллограмы
-        m[1] = l * 2.205; // киллограмы в фунты
-        m[2] = l * 35.274; // киллограмы в унции
-        m[3] = l / 6.35; // киллограмы в стоуны
-        return m;
+    private static void kilogram(double l) {
+        double ib = l * 2.205; // киллограмы в фунты
+        double unc = l * 35.274; // киллограмы в унции
+        double st = l / 6.35; // киллограмы в стоуны
+        outputWeight(l, ib, unc, st);
     }
 
     // метод преобразования фунтов
-    private static double[] ib(double l) {
-        double[] m = new double[4];
-        m[0] = l / 2.205;// фунты в киллограм
-        m[1] = l; // фунты
-        m[2] = l * 16; // фунты в унции
-        m[3] = l / 15; // фунты в стоуны
-        return m;
+    private static void ib(double l) {
+        double kg = l / 2.205;// фунты в киллограм
+        double unc = l * 16; // фунты в унции
+        double st = l / 15; // фунты в стоуны
+        outputWeight(kg, l, unc, st);
     }
 
     // метод преобразования унции
-    private static double[] ounce(double l) {
-        double[] m = new double[4];
-        m[0] = l * 35.274;// унции в киллограм
-        m[1] = l / 16; // унции в футы
-        m[2] = l; // унции
-        m[3] = l / 224; // унции в стоуны
-        return m;
+    private static void ounce(double l) {
+        double kg = l * 35.274;// унции в киллограм
+        double ib = l / 16; // унции в футы
+        double st = l / 224; // унции в стоуны
+        outputWeight(kg, ib, l, st);
     }
 
     // метод преобразования стоунов
-    private static double[] stone(double l) {
-        double[] m = new double[4];
-        m[0] = l / 6.35;// стоуны в киллограм
-        m[1] = l * 14; // стоуны в футы
-        m[2] = l * 224; // стоуны в унции
-        m[3] = l; // стоуны
-        return m;
+    private static void stone(double l) {
+        double kg = l / 6.35;// стоуны в киллограм
+        double ib = l * 14; // стоуны в футы
+        double unc = l * 224; // стоуны в унции
+        outputWeight(kg, ib, unc, l);
     }
 
     // метод преобразования метра
-    private static double[] meter(double l) {
-        double[] m = new double[4];
-        m[0] = l;// метры
-        m[1] = l / 1609; // метры в мили
-        m[2] = l * 1.094; // метры в ярды
-        m[3] = l * 3.281; // метры в футы
-        return m;
+    private static void meter(double l) {
+        double mile  = l / 1609; // метры в мили
+        double yard = l * 1.094; // метры в ярды
+        double feet = l * 3.281; // метры в футы
+        outputLenght(l, mile, yard, feet);
     }
 
     // метод преобразования мили
-    private static double[] mile(double l) {
-        double[] m = new double[4];
-        m[0] = l * 1609;// мили в метры
-        m[1] = l; // мили
-        m[2] = l * 1760; // мили в ярды
-        m[3] = l * 5280; // мили в футы
-        return m;
+    private static void mile(double l) {
+        double m = l * 1609;// мили в метры
+        double yard = l * 1760; // мили в ярды
+        double feet = l * 5280; // мили в футы
+        outputLenght(m, l, yard, feet);
     }
 
     // метод преобразования ярда
-    private static double[] yard(double l) {
-        double[] m = new double[4];
-        m[0] = l / 1.094;// ярды в метры
-        m[1] = l / 1760; // ярды в мили
-        m[2] = l; // ярды
-        m[3] = l * 3; // ярды футы
-        return m;
+    private static void yard(double l) {
+        double m = l / 1.094;// ярды в метры
+        double mile = l / 1760; // ярды в мили
+        double feet = l * 3; // ярды футы
+        outputLenght(m, mile, l, feet);
     }
 
     // метод преобразования футов
-    private static double[] foot(double l) {
-        double[] m;
-        m = new double[4];
-        m[0] = l / 3.281;// футы в метры
-        m[1] = l / 5280; // футы в мили
-        m[2] = l / 3; // футы в ярды
-        m[3] = l; // футы
-        return m;
+    private static void foot(double l) {
+        double m = l / 3.281;// футы в метры
+        double mile = l / 5280; // футы в мили
+        double yard = l / 3; // футы в ярды
+        outputLenght(m, mile, yard, l);
     }
 }
