@@ -5,16 +5,15 @@ public class Converter {
         boolean o = false;
         while (!o) {
             System.out.print("Выберите что переводить: 1 - масса, 2 - расстояние: ");
-            Scanner scanX = new Scanner(System.in);
-            byte x = scanX.nextByte();
+            Scanner scan = new Scanner(System.in);
+            byte x = scan.nextByte();
             switch (x) {
                 case 1:
                     o = true;
                     boolean i = false;
                     while (!i) {
                         System.out.print("Выберите единицу измерения: 1 - киллограм, 2 - фунт, 3 - униция, 4 - стоун: ");
-                        Scanner scanE = new Scanner(System.in);
-                        byte e = scanE.nextByte();
+                        byte e = scan.nextByte();
                         switch (e) {
                             case 1: //киллограм
                                 double k = Enter();
@@ -50,8 +49,7 @@ public class Converter {
                     boolean j = false;
                     while (!j) {
                         System.out.print("Выберите единицу измерения: 1 - метр, 2 - миля, 3 - ярд, 4 - фут: ");
-                        Scanner scanE = new Scanner(System.in);
-                        byte e = scanE.nextByte();
+                        byte e = scan.nextByte();
                         switch (e) {
                             case 1: //метр
                                 double me = Enter();
@@ -93,8 +91,8 @@ public class Converter {
     //метод ввода
     private static double Enter() {
         System.out.print("Введите число: ");
-        Scanner scanL = new Scanner(System.in);
-        return scanL.nextByte();
+        Scanner scan = new Scanner(System.in);
+        return scan.nextByte();
     }
 
     //метод вывода массы

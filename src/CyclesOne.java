@@ -3,8 +3,8 @@ import java.util.Scanner;
 public class CyclesOne {
     public static void main(String[] args) {
         System.out.print("Введите размер массива: ");
-        Scanner scanJ = new Scanner(System.in);
-        int j = scanJ.nextInt();
+        Scanner scan = new Scanner(System.in);
+        int j = scan.nextInt();
         boolean k = true;
         int[] myArray = new int[j];
         for (int i = 0; i <= myArray.length - 1; i++) {

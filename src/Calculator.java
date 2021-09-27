@@ -3,14 +3,12 @@ import java.util.Scanner;
 public class Calculator {
     public static void main(String[] args) {
         System.out.print("Введите первое число: ");
-        Scanner scanx = new Scanner(System.in);
-        double x = scanx.nextInt();
+        Scanner scan = new Scanner(System.in);
+        double x = scan.nextDouble();
         System.out.print("Введите второе число: ");
-        Scanner scany = new Scanner(System.in);
-        double y = scany.nextInt();
+        double y = scan.nextDouble();
         System.out.print("Введите арифметический знак(+, -, *, /): ");
-        Scanner scanZ = new Scanner(System.in);
-        char z = scanZ.next().charAt(0);
+        char z = scan.next().charAt(0);
         double result = 0;
         boolean i = true;
         switch (z) {
