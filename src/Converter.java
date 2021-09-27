@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.math.BigDecimal;
 
 public class Converter {
     public static void main(String[] args) {
