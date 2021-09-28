@@ -6,7 +6,7 @@ public class DataWorkOne {
         Scanner scan = new Scanner(System.in);
         Integer x = scan.nextInt();
         String z = Integer.toString(x);
-        System.out.print("Введите первое число: ");
+        System.out.print("Введите второе число: ");
         Integer y = scan.nextInt();
         int result = x.compareTo(y);
         double min;
