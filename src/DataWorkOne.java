@@ -24,6 +24,7 @@ public class DataWorkOne {
                 min = x.doubleValue();
                 System.out.print("Меньшее число: " + min);
                 break;
+
         }
     }
 }
