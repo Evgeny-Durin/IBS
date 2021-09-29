@@ -14,9 +14,10 @@ public class DataWorkOne {
             System.out.print("Меньшее число: " + (double) y);
         } else if (result == 0) {
             System.out.println("Числа равны");
-        } else
+        } else {
             System.out.println("Большее число: " + y);
-        System.out.print("Меньшее число: " + x.doubleValue());
+            System.out.print("Меньшее число: " + x.doubleValue());
+        }
     }
 }
 
